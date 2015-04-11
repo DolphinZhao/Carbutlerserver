@@ -10,17 +10,15 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 
 public class WithdrawActivity extends Activity {
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_withdraw);
-        ViewUtils.inject(this);
-        title.setMiddleText("提现");
-    }
-
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_withdraw);
+		ViewUtils.inject(this);
+		title.setMiddleText("提现");
+	}
 
 }

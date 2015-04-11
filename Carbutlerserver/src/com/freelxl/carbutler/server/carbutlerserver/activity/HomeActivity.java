@@ -14,69 +14,71 @@ import com.freelxl.carbutler.server.carbutlerserver.fragment.MenuFragment;
 
 public class HomeActivity extends FragmentActivity {
 
-    private DrawerLayout drawerLayout;
-    private boolean isOpen;
-    private ContentFragment contentFragment;
-    private MenuFragment menuFragment;
-    private long lastBackTime;
+	private DrawerLayout drawerLayout;
+	private boolean isOpen;
+	private ContentFragment contentFragment;
+	private MenuFragment menuFragment;
+	private long lastBackTime;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
-        drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home);
+		drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+		drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
 
-            @Override
-            public void onDrawerStateChanged(int arg0) {
+			@Override
+			public void onDrawerStateChanged(int arg0) {
 
-            }
+			}
 
-            @Override
-            public void onDrawerSlide(View arg0, float arg1) {
+			@Override
+			public void onDrawerSlide(View arg0, float arg1) {
 
-            }
+			}
 
-            @Override
-            public void onDrawerOpened(View arg0) {
-                isOpen = true;
+			@Override
+			public void onDrawerOpened(View arg0) {
+				isOpen = true;
 
-            }
+			}
 
-            @Override
-            public void onDrawerClosed(View arg0) {
-                isOpen = false;
+			@Override
+			public void onDrawerClosed(View arg0) {
+				isOpen = false;
 
-            }
-        });
-        contentFragment = new ContentFragment();
-        menuFragment = new MenuFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, contentFragment, "CONTENT").commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, menuFragment, "MENU").commit();
-    }
+			}
+		});
+		contentFragment = new ContentFragment();
+		menuFragment = new MenuFragment();
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.content_frame, contentFragment, "CONTENT")
+				.commit();
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.menu_frame, menuFragment, "MENU").commit();
+	}
 
-    public void toggle() {
-        if (isOpen) {
-            drawerLayout.closeDrawers();
-        } else {
-            drawerLayout.openDrawer(Gravity.LEFT);
-        }
-    }
+	public void toggle() {
+		if (isOpen) {
+			drawerLayout.closeDrawers();
+		} else {
+			drawerLayout.openDrawer(Gravity.LEFT);
+		}
+	}
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-            if (System.currentTimeMillis() - lastBackTime > 3 * 1000) {
-                ToastUtils.showToast("再按一下退出");
-                lastBackTime = System.currentTimeMillis();
-            } else {
-                finish();
-            }
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+			if (System.currentTimeMillis() - lastBackTime > 3 * 1000) {
+				ToastUtils.showToast("再按一下退出");
+				lastBackTime = System.currentTimeMillis();
+			} else {
+				finish();
+			}
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 
 }

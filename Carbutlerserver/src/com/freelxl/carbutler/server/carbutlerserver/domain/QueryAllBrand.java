@@ -9,14 +9,14 @@ import java.util.List;
  */
 public class QueryAllBrand extends BaseJson {
 
-    public List<Data> data;
+	public List<Data> data;
 
-    public class Data {
+	public class Data {
 
-        public String brandId;
-        public String brandLogo;
-        public String brandName;
-        public String brandEname;
-        public String brandIsHot;
-    }
+		public String brandId;
+		public String brandLogo;
+		public String brandName;
+		public String brandEname;
+		public String brandIsHot;
+	}
 }

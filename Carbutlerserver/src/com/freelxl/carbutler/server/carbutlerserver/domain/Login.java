@@ -7,19 +7,19 @@ import com.freelxl.baselibrary.bean.BaseJson;
  */
 public class Login extends BaseJson {
 
-    public Data data;
+	public Data data;
 
-    public class Data {
+	public class Data {
 
-        public String token;
+		public String token;
 
-        public Smember smember;
+		public Smember smember;
 
-        public class Smember {
+		public class Smember {
 
-            public String smemberId;
-            public String smemberStatus;
-            public String smemberType;
-        }
-    }
+			public String smemberId;
+			public String smemberStatus;
+			public String smemberType;
+		}
+	}
 }

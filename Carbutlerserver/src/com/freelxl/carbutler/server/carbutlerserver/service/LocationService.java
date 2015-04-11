@@ -16,61 +16,62 @@ import com.freelxl.carbutler.server.carbutlerserver.config.ConstantValue;
 import java.util.HashMap;
 
 public class LocationService extends Service {
-    public LocationService() {
+	public LocationService() {
 
-    }
+	}
 
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
+	@Override
+	public IBinder onBind(Intent intent) {
+		return null;
+	}
 
-    @Override
-    public void onStart(Intent intent, int startId) {
-        super.onStart(intent, startId);
-    }
+	@Override
+	public void onStart(Intent intent, int startId) {
+		super.onStart(intent, startId);
+	}
 
-    @Override
-    public void onCreate() {
+	@Override
+	public void onCreate() {
 
-        LocationClient mLocClient = new LocationClient(getApplicationContext());
-        mLocClient.registerLocationListener(bdLocationListener);
-        LocationClientOption option = new LocationClientOption();
-        option.setOpenGps(true);// 打开gps
-        option.setCoorType("bd09ll"); // 设置坐标类型
-        option.setScanSpan(10000);
-        option.setIsNeedAddress(true);
-        option.setLocationMode(LocationClientOption.LocationMode.Battery_Saving);
-        mLocClient.setLocOption(option);
-        mLocClient.setDebug(true);
-        mLocClient.start();
-        mLocClient.requestLocation(); // 定位
-    }
+		LocationClient mLocClient = new LocationClient(getApplicationContext());
+		mLocClient.registerLocationListener(bdLocationListener);
+		LocationClientOption option = new LocationClientOption();
+		option.setOpenGps(true);// 打开gps
+		option.setCoorType("bd09ll"); // 设置坐标类型
+		option.setScanSpan(10000);
+		option.setIsNeedAddress(true);
+		option.setLocationMode(LocationClientOption.LocationMode.Battery_Saving);
+		mLocClient.setLocOption(option);
+		mLocClient.setDebug(true);
+		mLocClient.start();
+		mLocClient.requestLocation(); // 定位
+	}
 
-    BDLocationListener bdLocationListener = new BDLocationListener() {
+	BDLocationListener bdLocationListener = new BDLocationListener() {
 
-        @Override
-        public void onReceiveLocation(BDLocation location) {
+		@Override
+		public void onReceiveLocation(BDLocation location) {
 
-            double latitude = location.getLatitude();
-            double longitude = location.getLongitude();
+			double latitude = location.getLatitude();
+			double longitude = location.getLongitude();
 
-            ToastUtils.showToast("latitude" + latitude + "longitude" + longitude);
+			ToastUtils.showToast("latitude" + latitude + "longitude"
+					+ longitude);
 
-            HashMap<String, String> paramMap = new HashMap<String, String>();
-            paramMap.put("lat", String.valueOf(latitude));
-            paramMap.put("lng", String.valueOf(longitude));
-            new HttpRequest<BaseJson>(getApplicationContext(), ConstantValue.updateLatLng, paramMap, BaseJson.class, false) {
+			HashMap<String, String> paramMap = new HashMap<String, String>();
+			paramMap.put("lat", String.valueOf(latitude));
+			paramMap.put("lng", String.valueOf(longitude));
+			new HttpRequest<BaseJson>(getApplicationContext(),
+					ConstantValue.updateLatLng, paramMap, BaseJson.class, false) {
 
-                @Override
-                public void onSuccess(BaseJson fromJson) {
+				@Override
+				public void onSuccess(BaseJson fromJson) {
 
-                }
+				}
 
-            }.request();
+			}.request();
 
+		}
 
-        }
-
-    };
+	};
 }

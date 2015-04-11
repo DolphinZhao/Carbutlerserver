@@ -18,67 +18,65 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
  */
 public class CommonTitle extends RelativeLayout {
 
-    Context context;
+	Context context;
 
-    OnClickListener onRightTextClickListener;
+	OnClickListener onRightTextClickListener;
 
-    OnClickListener onBackClickListener;
+	OnClickListener onBackClickListener;
 
-    @ViewInject(R.id.iv_back)
-    ImageView iv_back;
+	@ViewInject(R.id.iv_back)
+	ImageView iv_back;
 
-    @ViewInject(R.id.rightText)
-    TextView rightText;
+	@ViewInject(R.id.rightText)
+	TextView rightText;
 
-    @ViewInject(R.id.middleText)
-    TextView middleText;
+	@ViewInject(R.id.middleText)
+	TextView middleText;
 
+	public CommonTitle(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.context = context;
+	}
 
-    public CommonTitle(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.context = context;
-    }
+	@Override
+	protected void onFinishInflate() {
+		super.onFinishInflate();
+		ViewUtils.inject(this);
+	}
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        ViewUtils.inject(this);
-    }
+	@OnClick(R.id.iv_back)
+	public void iv_back(View view) {
+		if (onBackClickListener != null) {
+			onBackClickListener.onClick(view);
+		}
+		if (context instanceof Activity) {
+			((Activity) context).finish();
+		}
+	}
 
-    @OnClick(R.id.iv_back)
-    public void iv_back(View view) {
-        if (onBackClickListener != null) {
-            onBackClickListener.onClick(view);
-        }
-        if (context instanceof Activity) {
-            ((Activity) context).finish();
-        }
-    }
+	@OnClick(R.id.rightText)
+	public void rightText(View view) {
+		if (onRightTextClickListener != null) {
+			onRightTextClickListener.onClick(view);
+		}
+	}
 
-    @OnClick(R.id.rightText)
-    public void rightText(View view) {
-        if (onRightTextClickListener != null) {
-            onRightTextClickListener.onClick(view);
-        }
-    }
+	public void setRightText(String str) {
 
-    public void setRightText(String str) {
+		rightText.setVisibility(View.VISIBLE);
+		rightText.setText(str);
+	}
 
-        rightText.setVisibility(View.VISIBLE);
-        rightText.setText(str);
-    }
+	public void setMiddleText(String str) {
+		middleText.setText(str);
+	}
 
-    public void setMiddleText(String str) {
-        middleText.setText(str);
-    }
+	public void setOnRightTextClickListener(OnClickListener onClickListener) {
+		this.onRightTextClickListener = onClickListener;
+	}
 
-    public void setOnRightTextClickListener(OnClickListener onClickListener) {
-        this.onRightTextClickListener = onClickListener;
-    }
-
-    public void setOnBackClickListener(OnClickListener onClickListener) {
-        this.onBackClickListener = onClickListener;
-    }
-
+	public void setOnBackClickListener(OnClickListener onClickListener) {
+		this.onBackClickListener = onClickListener;
+	}
 
 }

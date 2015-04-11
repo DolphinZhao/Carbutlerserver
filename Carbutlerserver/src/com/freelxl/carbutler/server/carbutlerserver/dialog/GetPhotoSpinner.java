@@ -8,9 +8,8 @@ import android.widget.Spinner;
  */
 public class GetPhotoSpinner extends Spinner {
 
-
-    public GetPhotoSpinner(Context context) {
-        super(context);
-    }
+	public GetPhotoSpinner(Context context) {
+		super(context);
+	}
 
 }

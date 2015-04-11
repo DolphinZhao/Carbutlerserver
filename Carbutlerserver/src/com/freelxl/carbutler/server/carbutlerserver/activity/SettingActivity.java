@@ -18,48 +18,49 @@ import java.util.HashMap;
 
 public class SettingActivity extends Activity {
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
-        ViewUtils.inject(this);
-        title.setMiddleText("设置");
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_setting);
+		ViewUtils.inject(this);
+		title.setMiddleText("设置");
+	}
 
-    @OnClick(R.id.feedback)
-    public void feedback(View view) {
-        Intent intent = new Intent(this, FeedbackActivity.class);
-        startActivity(intent);
-    }
+	@OnClick(R.id.feedback)
+	public void feedback(View view) {
+		Intent intent = new Intent(this, FeedbackActivity.class);
+		startActivity(intent);
+	}
 
-    @OnClick(R.id.update)
-    public void update(View view) {
+	@OnClick(R.id.update)
+	public void update(View view) {
 
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        paramMap.put("versionsType", "安卓");
+		HashMap<String, String> paramMap = new HashMap<String, String>();
+		paramMap.put("versionsType", "安卓");
 
-        new HttpRequest<BaseJson>(SettingActivity.this, ConstantValue.findSersions, paramMap, BaseJson.class) {
+		new HttpRequest<BaseJson>(SettingActivity.this,
+				ConstantValue.findSersions, paramMap, BaseJson.class) {
 
-            @Override
-            public void onSuccess(BaseJson fromJson) {
+			@Override
+			public void onSuccess(BaseJson fromJson) {
 
-            }
+			}
 
-        }.request();
-    }
+		}.request();
+	}
 
-    @OnClick(R.id.about)
-    public void about(View view) {
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-    }
+	@OnClick(R.id.about)
+	public void about(View view) {
+		Intent intent = new Intent(this, AboutActivity.class);
+		startActivity(intent);
+	}
 
-    @OnClick(R.id.exit)
-    public void exit(View view) {
+	@OnClick(R.id.exit)
+	public void exit(View view) {
 
-    }
+	}
 
 }

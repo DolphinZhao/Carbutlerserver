@@ -19,44 +19,44 @@ import java.util.HashMap;
 
 public class FeedbackActivity extends Activity {
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-    @ViewInject(R.id.et_opinionContent)
-    EditText et_opinionContent;
+	@ViewInject(R.id.et_opinionContent)
+	EditText et_opinionContent;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
-        ViewUtils.inject(this);
-        title.setMiddleText("意见反馈");
-        title.setRightText("提交反馈");
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_feedback);
+		ViewUtils.inject(this);
+		title.setMiddleText("意见反馈");
+		title.setRightText("提交反馈");
 
-        title.setOnRightTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String opinionContent = et_opinionContent.getText().toString();
-                if (TextUtils.isEmpty(opinionContent)) {
-                    ToastUtils.showToast("请填写意见内容");
-                    return;
-                }
-                HashMap<String, String> paramMap = new HashMap<String, String>();
-                paramMap.put("opinionSource", "2");
-                paramMap.put("opinionClientType", "2");
-                paramMap.put("opinionContent", opinionContent);
+		title.setOnRightTextClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String opinionContent = et_opinionContent.getText().toString();
+				if (TextUtils.isEmpty(opinionContent)) {
+					ToastUtils.showToast("请填写意见内容");
+					return;
+				}
+				HashMap<String, String> paramMap = new HashMap<String, String>();
+				paramMap.put("opinionSource", "2");
+				paramMap.put("opinionClientType", "2");
+				paramMap.put("opinionContent", opinionContent);
 
-                new HttpRequest<BaseJson>(FeedbackActivity.this
-                        , ConstantValue.addOpinion, paramMap, BaseJson.class) {
+				new HttpRequest<BaseJson>(FeedbackActivity.this,
+						ConstantValue.addOpinion, paramMap, BaseJson.class) {
 
-                    @Override
-                    public void onSuccess(BaseJson fromJson) {
-                        FeedbackActivity.this.finish();
-                    }
+					@Override
+					public void onSuccess(BaseJson fromJson) {
+						FeedbackActivity.this.finish();
+					}
 
-                }.request();
-            }
-        });
-    }
+				}.request();
+			}
+		});
+	}
 
 }

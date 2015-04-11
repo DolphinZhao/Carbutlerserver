@@ -17,39 +17,39 @@ import java.util.HashMap;
 
 public class MyIncomeActivity extends Activity {
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_income);
-        ViewUtils.inject(this);
-        title.setMiddleText("收入");
-        title.setRightText("提现");
-        title.setOnRightTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_my_income);
+		ViewUtils.inject(this);
+		title.setMiddleText("收入");
+		title.setRightText("提现");
+		title.setOnRightTextClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
 
-                Intent intent = new Intent(MyIncomeActivity.this, WithdrawActivity.class);
-                startActivity(intent);
-            }
-        });
+				Intent intent = new Intent(MyIncomeActivity.this,
+						WithdrawActivity.class);
+				startActivity(intent);
+			}
+		});
 
-        fillData();
-    }
+		fillData();
+	}
 
-    private void fillData() {
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        new HttpRequest<BaseJson>(MyIncomeActivity.this
-                , ConstantValue.findMyIncome, paramMap, BaseJson.class) {
+	private void fillData() {
+		HashMap<String, String> paramMap = new HashMap<String, String>();
+		new HttpRequest<BaseJson>(MyIncomeActivity.this,
+				ConstantValue.findMyIncome, paramMap, BaseJson.class) {
 
-            @Override
-            public void onSuccess(BaseJson fromJson) {
+			@Override
+			public void onSuccess(BaseJson fromJson) {
 
-            }
-        }.request();
-    }
-
+			}
+		}.request();
+	}
 
 }

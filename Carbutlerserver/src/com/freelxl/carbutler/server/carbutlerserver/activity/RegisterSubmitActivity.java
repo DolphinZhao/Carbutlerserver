@@ -10,14 +10,14 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 
 public class RegisterSubmitActivity extends Activity {
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_submit);
-        ViewUtils.inject(this);
-        title.setMiddleText("申请已提交");
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_register_submit);
+		ViewUtils.inject(this);
+		title.setMiddleText("申请已提交");
+	}
 }

@@ -19,47 +19,46 @@ import java.util.HashMap;
 
 public class GoodAtBrandActivity extends Activity {
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-    @ViewInject(R.id.lv_car_brand)
-    ListView lv_car_brand;
+	@ViewInject(R.id.lv_car_brand)
+	ListView lv_car_brand;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_good_at_brand);
-        ViewUtils.inject(this);
-        title.setMiddleText("擅长品牌");
-        title.setRightText("保存");
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_good_at_brand);
+		ViewUtils.inject(this);
+		title.setMiddleText("擅长品牌");
+		title.setRightText("保存");
 
+		title.setOnRightTextClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
 
-        title.setOnRightTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.putExtra("smemberBrand", "smemberBrand");
+				setResult(0, intent);
+				finish();
+			}
+		});
 
-                Intent intent = new Intent();
-                intent.putExtra("smemberBrand", "smemberBrand");
-                setResult(0, intent);
-                finish();
-            }
-        });
+		fillData();
+	}
 
-        fillData();
-    }
+	private void fillData() {
+		HashMap<String, String> paramMap = new HashMap<String, String>();
+		new HttpRequest<QueryAllBrand>(GoodAtBrandActivity.this,
+				ConstantValue.queryAllBrand, paramMap, QueryAllBrand.class) {
 
-    private void fillData() {
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        new HttpRequest<QueryAllBrand>(GoodAtBrandActivity.this
-                , ConstantValue.queryAllBrand, paramMap, QueryAllBrand.class) {
+			@Override
+			public void onSuccess(QueryAllBrand fromJson) {
+				lv_car_brand.setAdapter(new CarBrandAdapter(
+						GoodAtBrandActivity.this, fromJson.data));
+			}
 
-            @Override
-            public void onSuccess(QueryAllBrand fromJson) {
-                lv_car_brand.setAdapter(new CarBrandAdapter(GoodAtBrandActivity.this, fromJson.data));
-            }
-
-        }.request();
-    }
-
+		}.request();
+	}
 
 }

@@ -12,20 +12,19 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 
 public class AboutActivity extends Activity {
 
-    @ViewInject(R.id.tv_versionName)
-    TextView tv_versionName;
+	@ViewInject(R.id.tv_versionName)
+	TextView tv_versionName;
 
-    @ViewInject(R.id.title)
-    CommonTitle title;
+	@ViewInject(R.id.title)
+	CommonTitle title;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
-        ViewUtils.inject(this);
-        title.setMiddleText("关于");
-        tv_versionName.setText("v" + BaseUtils.getVersionName(this));
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_about);
+		ViewUtils.inject(this);
+		title.setMiddleText("关于");
+		tv_versionName.setText("v" + BaseUtils.getVersionName(this));
+	}
 
 }
