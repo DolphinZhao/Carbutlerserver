@@ -87,6 +87,31 @@ public abstract class HttpRequest<T extends BaseJson> {
 
         this(context, path, null, clazz, isShowLoadingDialog);
     }
+    
+   
+    public static <L extends BaseJson> void request(Context context, String path, Map<String, String> paramMap,
+            Class<L> clazz, boolean isShowLoadingDialog, final RequestCallBack callBack) {
+    	if(callBack == null)
+    		return;
+    	new HttpRequest<L>(context, path, paramMap, clazz, isShowLoadingDialog) {
+
+			@Override
+			public void onSuccess(BaseJson fromJson) {
+				callBack.onSuccess(fromJson);
+			}
+			
+			@Override
+			public void onError(BaseJson baseJson, VolleyError error) {
+				callBack.onError(baseJson, error);
+			}
+    		
+		}.request();
+    }
+    
+    public static interface RequestCallBack {
+    	void onSuccess(BaseJson result);
+    	void onError(BaseJson result, VolleyError error);
+    }
 
     /**
      * 重新设置请求参数
