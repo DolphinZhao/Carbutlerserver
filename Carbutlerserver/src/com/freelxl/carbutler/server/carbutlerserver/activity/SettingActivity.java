@@ -38,7 +38,7 @@ public class SettingActivity extends Activity {
     @OnClick(R.id.update)
     public void update(View view) {
 
-        HashMap<String, String> paramMap = new HashMap<>();
+        HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("versionsType", "安卓");
 
         new HttpRequest<BaseJson>(SettingActivity.this, ConstantValue.findSersions, paramMap, BaseJson.class) {

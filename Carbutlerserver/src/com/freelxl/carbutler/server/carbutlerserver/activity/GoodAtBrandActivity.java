@@ -49,7 +49,7 @@ public class GoodAtBrandActivity extends Activity {
     }
 
     private void fillData() {
-        HashMap<String, String> paramMap = new HashMap<>();
+        HashMap<String, String> paramMap = new HashMap<String, String>();
         new HttpRequest<QueryAllBrand>(GoodAtBrandActivity.this
                 , ConstantValue.queryAllBrand, paramMap, QueryAllBrand.class) {
 

@@ -40,7 +40,7 @@ public class MyIncomeActivity extends Activity {
     }
 
     private void fillData() {
-        HashMap<String, String> paramMap = new HashMap<>();
+        HashMap<String, String> paramMap = new HashMap<String, String>();
         new HttpRequest<BaseJson>(MyIncomeActivity.this
                 , ConstantValue.findMyIncome, paramMap, BaseJson.class) {
 

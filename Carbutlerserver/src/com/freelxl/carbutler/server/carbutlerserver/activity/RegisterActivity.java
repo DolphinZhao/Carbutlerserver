@@ -113,7 +113,7 @@ public class RegisterActivity extends Activity {
         }
 
 
-        HashMap<String, String> paramMap = new HashMap<>();
+        HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("smemberName", smemberName);
         paramMap.put("smemberMobile", smemberMobile);
         //TODO 完成选择品牌

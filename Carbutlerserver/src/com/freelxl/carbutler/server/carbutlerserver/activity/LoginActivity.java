@@ -88,7 +88,7 @@ public class LoginActivity extends Activity {
             ToastUtils.showToast("请输入密码");
             return;
         }
-        HashMap<String, String> paramMap = new HashMap<>();
+        HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("loginName", loginName);
         paramMap.put("loginPwd", loginPwd);
         new HttpRequest<Login>(LoginActivity.this

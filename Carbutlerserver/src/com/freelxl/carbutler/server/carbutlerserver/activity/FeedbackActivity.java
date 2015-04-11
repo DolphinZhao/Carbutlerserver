@@ -41,7 +41,7 @@ public class FeedbackActivity extends Activity {
                     ToastUtils.showToast("请填写意见内容");
                     return;
                 }
-                HashMap<String, String> paramMap = new HashMap<>();
+                HashMap<String, String> paramMap = new HashMap<String, String>();
                 paramMap.put("opinionSource", "2");
                 paramMap.put("opinionClientType", "2");
                 paramMap.put("opinionContent", opinionContent);

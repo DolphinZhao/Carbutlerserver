@@ -57,7 +57,7 @@ public class LocationService extends Service {
 
             ToastUtils.showToast("latitude" + latitude + "longitude" + longitude);
 
-            HashMap<String, String> paramMap = new HashMap<>();
+            HashMap<String, String> paramMap = new HashMap<String, String>();
             paramMap.put("lat", String.valueOf(latitude));
             paramMap.put("lng", String.valueOf(longitude));
             new HttpRequest<BaseJson>(getApplicationContext(), ConstantValue.updateLatLng, paramMap, BaseJson.class, false) {
