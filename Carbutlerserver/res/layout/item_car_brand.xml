@@ -29,7 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/iv_car_brand"
             android:paddingLeft="@dimen/padding_size5"
             android:singleLine="true"
             android:text="宝马"

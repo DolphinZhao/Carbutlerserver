@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">车管家服务版</string>
-    <string name="rmb">￥</string>
+    <string name="app_name" translatable="false">车管家服务版</string>
+    <string name="rmb" translatable="false">￥</string>
 
     <!-- 登陆 -->
 
 
     <!-- 注册 -->
-    <string name="register_introduce1">车管家与专业4S店和技师合作，为车主提供专业又低价的保养、维修、救援等服务，同时获得相应的报酬。</string>
-    <string name="register_introduce2">你提交一下资料，将会由车管家的师傅联系你。通过线下资质认证后就可以提供服务并获取报酬了。</string>
+    <string name="register_introduce1" translatable="false">车管家与专业4S店和技师合作，为车主提供专业又低价的保养、维修、救援等服务，同时获得相应的报酬。</string>
+    <string name="register_introduce2" translatable="false">你提交一下资料，将会由车管家的师傅联系你。通过线下资质认证后就可以提供服务并获取报酬了。</string>
 
     <!-- 保养订单 -->
-    <string name="maintenance_order_lc">当前里程</string>
-    <string name="maintenance_order_gl">公里</string>
-    <string name="maintenance_order_wsdd">完善订单</string>
-    <string name="maintenance_order_zdxz">自动选择</string>
-    <string name="maintenance_order_fwf">服务方</string>
-    <string name="maintenance_order_fwfs">服务方式</string>
-    <string name="maintenance_order_qc">取车</string>
-    <string name="maintenance_order_hc">还车</string>
-    <string name="maintenance_order_sgd">施工点</string>
-    <string name="maintenance_order_didian">北京市朝阳区东四环中路41号</string>
-    <string name="maintenance_order_shijian">1月22日 16:30</string>
-    <string name="maintenance_order_zdfp">自动分配</string>
+    <string name="maintenance_order_lc" translatable="false">当前里程</string>
+    <string name="maintenance_order_gl" translatable="false">公里</string>
+    <string name="maintenance_order_wsdd" translatable="false">完善订单</string>
+    <string name="maintenance_order_zdxz" translatable="false">自动选择</string>
+    <string name="maintenance_order_fwf" translatable="false">服务方</string>
+    <string name="maintenance_order_fwfs" translatable="false">服务方式</string>
+    <string name="maintenance_order_qc" translatable="false">取车</string>
+    <string name="maintenance_order_hc" translatable="false">还车</string>
+    <string name="maintenance_order_sgd" translatable="false">施工点</string>
+    <string name="maintenance_order_didian" translatable="false">北京市朝阳区东四环中路41号</string>
+    <string name="maintenance_order_shijian" translatable="false">1月22日 16:30</string>
+    <string name="maintenance_order_zdfp" translatable="false">自动分配</string>
     <string name="maintenance_order_fpgjscd">分配给技师抢单</string>
     <string name="maintenance_order_apgw">安排工位</string>
     <string name="maintenance_order_ap">安排</string>
@@ -109,5 +109,6 @@
     <string name="title_activity_feedback">FeedbackActivity</string>
     <string name="title_activity_register_submit">RegisterSubmitActivity</string>
     <string name="title_activity_good_at_brand">GoodAtBrandActivity</string>
-
+    
+    
 </resources>

@@ -103,8 +103,10 @@ public class LoginActivity extends Activity {
 				edit.putString("loginPwd", loginPwd);
 				edit.commit();
 
-				startService(new Intent(LoginActivity.this,
-						LocationService.class));
+				// 上传经纬度的服务
+				// startService(new Intent(LoginActivity.this,
+				// LocationService.class));
+
 				GlobalParams.token = fromJson.data.token;
 				GlobalParams.smemberId = fromJson.data.smember.smemberId;
 
