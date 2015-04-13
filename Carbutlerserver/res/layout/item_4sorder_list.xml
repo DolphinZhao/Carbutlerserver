@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/layout_height5" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height5"
+        android:orientation="horizontal">
+        <TextView 
+             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            />
+
+        <ImageView
+           android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:src="@drawable/new_order" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height5"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size8"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size8"
+                    android:text="@string/order4s_repair"
+                    android:textColor="@color/red2"
+                    android:textSize="@dimen/text_size3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size8"
+                    android:text="￥560"
+                    android:textColor="@color/red2"
+                    android:textSize="@dimen/text_size3" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:layout_marginTop="@dimen/margin_size6"
+                android:text="@string/other_order_cxdm"
+                android:textSize="@dimen/text_size3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:layout_marginTop="@dimen/margin_size6"
+                android:text="@string/order4s_repair_car"
+                android:textSize="@dimen/text_size3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size8"
+                    android:text="@string/order4s_sendor"
+                    android:textColor="@color/back6"
+                    android:textSize="@dimen/text_size2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size6"
+                    android:text="刘建国"
+                    android:textColor="@color/back3"
+                    android:textSize="@dimen/text_size2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size6"
+                    android:text="13999999999"
+                    android:textColor="@color/back3"
+                    android:textSize="@dimen/text_size2" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:src="@drawable/butler_phone_info" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size6"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size8"
+                    android:text="@string/order4s_sendtime"
+                    android:textColor="@color/back6"
+                    android:textSize="@dimen/text_size2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_size6"
+                    android:text="1月22日 16:30"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size2" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_size6"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/order4s_repair_states"
+                    android:textColor="@color/red2"
+                    android:textSize="@dimen/text_size3" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

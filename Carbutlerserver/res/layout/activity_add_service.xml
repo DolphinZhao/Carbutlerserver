@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 项目增项 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back14"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size5"
+        android:background="@drawable/ic_preference_normal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_service_kind"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="更换节气门"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <!-- 原因 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_service_reason"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="有问题"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <!-- 原厂 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_parts"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="配件名称"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <!-- 单件 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_price"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="120元(享8折)"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <!-- 数量 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_number"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="1"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <!-- 工时单价 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_gs_price"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="20元"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <!-- 工时数量 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/order_height"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_size8"
+                android:gravity="center_vertical|left"
+                android:text="@string/orderadd_gs_number"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/margin_size8"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="1"
+                android:textColor="@color/back6"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/back12" />
+
+        <Gallery
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:spacing="@dimen/margin_size3" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/roundButton1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/order_height"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_size6"
+        android:layout_marginRight="@dimen/margin_size6"
+        android:layout_marginTop="@dimen/margin_size15"
+        android:background="@drawable/login_registerbtn"
+        android:drawableLeft="@drawable/add_continue"
+        android:drawablePadding="-80dp"
+        android:paddingLeft="100dp"
+        android:text="@string/orderadd_continue"
+        android:textColor="@color/back6"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/roundButton2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/order_height"
+        android:layout_marginLeft="@dimen/margin_size6"
+        android:layout_marginRight="@dimen/margin_size6"
+        android:layout_marginTop="@dimen/margin_size15"
+        android:background="@drawable/login_loginbtn"
+        android:text="@string/orderadd_commit"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+</LinearLayout>
